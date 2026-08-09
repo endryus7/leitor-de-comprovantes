@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 30px;
+
+  background: #f1f5f7;
+
+  color: #1e293b;
+}
+
+.container {
+  width: min(90vw, 480px);
+
+  text-align: center;
+}
+
+/* CABEÇALHO */
+
+h1 {
+  color: #1e293b;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  margin-bottom: 18px;
+}
+
+/* TOTAL */
+
+.total {
+  width: 100%;
+  height: 115px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #11736d;
+
+  border-radius: 12px;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.12);
+}
+
+.total small {
+  color: white;
+
+  font-size: 11px;
+
+  margin-bottom: 4px;
+}
+
+.total h2 {
+  color: white;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  margin: 5px 0;
+}
+
+.total span {
+  color: white;
+
+  font-size: 11px;
+}
+
+/* UPLOAD */
+
+.upload {
+  width: 96%;
+  height: 65px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 2px dashed #cbd5dc;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.upload:hover {
+  background: #f8fafc;
+
+  border-color: #11736d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);
+}
+
+.upload input {
+  display: none;
+}
+
+/* LISTA DE GASTOS */
+
+.lista {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  text-align: left;
+}
+
+/* CARD DO GASTO */
+
+.gasto {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  padding: 14px 15px;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  animation: aparecer 0.25s ease;
+}
+
+.gasto:hover {
+  transform: translateY(-2px);
+
+  border-color: #b7d9d5;
+
+  box-shadow: 0 6px 18px rgba(15, 118, 110, 0.08);
+}
+
+/* PARTE DE CIMA DO CARD */
+
+.gasto-topo {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+/* ESTABELECIMENTO */
+
+.estabelecimento {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.categoria {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #edf7f6;
+
+  border-radius: 9px;
+
+  font-size: 19px;
+}
+
+/* NOME DA LOJA */
+
+.estabelecimento span:last-child {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/*  VALOR TOTAL */
+
+.valor-total {
+  flex-shrink: 0;
+
+  color: #11736d;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* PRODUTOS */
+
+.produtos {
+  margin-top: 12px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #eef2f5;
+}
+
+.produto {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 5px 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.produto span {
+  flex: 1;
+
+  min-width: 0;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.produto strong {
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.excluir {
+  width: 100%;
+
+  margin-top: 12px;
+  padding-top: 9px;
+
+  border: 0;
+  border-top: 1px solid #eef2f5;
+
+  background: transparent;
+
+  color: #ef4444;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.excluir:hover {
+  color: #b91c1c;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  body {
+    padding-top: 20px;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 11px;
+
+    margin-bottom: 15px;
+  }
+
+  .total {
+    height: 105px;
+  }
+
+  .total h2 {
+    font-size: 30px;
+  }
+
+  .upload {
+    width: 100%;
+
+    height: 60px;
+  }
+
+  .lista {
+    margin-top: 15px;
+
+    gap: 8px;
+  }
+
+  .gasto {
+    padding: 12px;
+  }
+
+  .estabelecimento {
+    font-size: 13px;
+  }
+
+  .categoria {
+    width: 34px;
+    height: 34px;
+
+    font-size: 18px;
+  }
+
+  .valor-total {
+    font-size: 14px;
+  }
+
+  .produto {
+    font-size: 11px;
+  }
+
+  .produto strong {
+    font-size: 11px;
+  }
+}
